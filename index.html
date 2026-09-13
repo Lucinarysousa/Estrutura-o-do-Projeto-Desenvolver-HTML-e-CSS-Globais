@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bem Estar e Saúde</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/variaveis.css">
+<link rel="stylesheet" href="css/estilo.css">
+<link rel="stylesheet" href="css/login.css">
+</head>
+<body class="pagina-login">
+  <div class="envelope-login">
+    <div class="marca-login">
+      <div class="simbolo-marca">🩺</div>
+      <h1>Bem Estar e Saúde</h1>
+      <p>Organização e acompanhamento de vacinas e medicamentos</p>
+    </div>
+
+    <div class="cartao-login">
+      <div class="abas-login">
+        <button type="button" id="abaEntrar" class="aba-login aba-login--ativa">Entrar</button>
+        <button type="button" id="abaCadastrar" class="aba-login">Cadastrar profissional</button>
+      </div>
+
+      <form id="formularioEntrar" class="formulario-login">
+        <h2>Acessar plataforma</h2>
+        <div class="grupo-formulario">
+          <label for="entrarEmail">Email</label>
+          <input class="campo-texto" type="email" id="entrarEmail" required>
+        </div>
+        <div class="grupo-formulario">
+          <label for="entrarSenha">Senha</label>
+          <input class="campo-texto" type="password" id="entrarSenha" required>
+        </div>
+        <button type="submit" class="botao botao--primario botao--bloco">Entrar</button>
+      </form>
+
+      <form id="formularioCadastrar" class="formulario-login oculto">
+        <h2>Cadastro de profissional</h2>
+        <div class="rotulo-preview-foto grupo-formulario">
+          <div id="previaFotoCadastro" class="avatar-iniciais avatar-grande">?</div>
+          <div>
+            <button type="button" id="botaoEscolherFoto" class="botao botao--secundario botao--pequeno">Escolher foto</button>
+            <input type="file" id="entradaFotoCadastro" class="entrada-arquivo-oculta" accept="image/*">
+          </div>
+        </div>
+        <div class="linha-formulario">
+          <div class="grupo-formulario">
+            <label for="cadastroNome">Nome completo</label>
+            <input class="campo-texto" type="text" id="cadastroNome" required>
+          </div>
+          <div class="grupo-formulario">
+            <label for="cadastroCpf">CPF</label>
+            <input class="campo-texto" type="text" id="cadastroCpf" maxlength="14" placeholder="000.000.000-00" required>
+            <span class="texto-erro-campo" id="erroCadastroCpf"></span>
+          </div>
+        </div>
+        <div class="linha-formulario">
+          <div class="grupo-formulario">
+            <label for="cadastroEmail">Email</label>
+            <input class="campo-texto" type="email" id="cadastroEmail" required>
+            <span class="texto-erro-campo" id="erroCadastroEmail"></span>
+          </div>
+          <div class="grupo-formulario">
+            <label for="cadastroNascimento">Data de nascimento</label>
+            <input class="campo-texto" type="date" id="cadastroNascimento" required>
+          </div>
+        </div>
+        <div class="grupo-formulario">
+          <label for="cadastroCoren">Número do COREN</label>
+          <input class="campo-texto" type="text" id="cadastroCoren" required>
+        </div>
+        <div class="linha-formulario">
+          <div class="grupo-formulario">
+            <label for="cadastroSenha">Senha</label>
+            <input class="campo-texto" type="password" id="cadastroSenha" minlength="6" required>
+          </div>
+          <div class="grupo-formulario">
+            <label for="cadastroRepetirSenha">Repetir senha</label>
+            <input class="campo-texto" type="password" id="cadastroRepetirSenha" minlength="6" required>
+            <span class="texto-erro-campo" id="erroCadastroSenha"></span>
+          </div>
+        </div>
+        <button type="submit" class="botao botao--primario botao--bloco">Cadastrar</button>
+      </form>
+
+      <div class="rodape-login">
+        <button type="button" id="botaoUsuariosExemplo" class="botao botao-exemplo">Quer apenas testar a plataforma?</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="modalExemplos" class="sobreposicao-modal oculto">
+    <div class="caixa-modal caixa-modal--estreita">
+      <div class="cabecalho-modal">
+        <h2>Usuários de exemplo</h2>
+        <button type="button" class="botao-fechar-modal" id="fecharModalExemplos">&times;</button>
+      </div>
+      <div class="lista-credenciais" id="listaCredenciaisExemplo"></div>
+    </div>
+  </div>
+
+<script src="js/utilitarios.js"></script>
+<script src="js/armazenamento.js"></script>
+<script src="js/autenticacao.js"></script>
+<script src="js/login.js"></script>
+</body>
+</html>

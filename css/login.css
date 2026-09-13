@@ -1,0 +1,144 @@
+body.pagina-login {
+  min-height: 100vh;
+  background: linear-gradient(160deg, var(--azul-escuro) 0%, var(--azul-principal) 55%, var(--azul-medio) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 16px;
+}
+
+.envelope-login {
+  width: 100%;
+  max-width: 460px;
+}
+
+.marca-login {
+  text-align: center;
+  color: var(--texto-claro);
+  margin-bottom: 22px;
+}
+
+.marca-login .simbolo-marca {
+  font-size: 42px;
+}
+
+.marca-login h1 {
+  font-size: 26px;
+  font-weight: 700;
+  margin-top: 6px;
+}
+
+.marca-login p {
+  font-size: 13.5px;
+  color: var(--azul-claro);
+  margin-top: 4px;
+}
+
+.cartao-login {
+  background-color: var(--branco);
+  border-radius: var(--raio-borda);
+  box-shadow: var(--sombra-modal);
+  padding: 26px;
+}
+
+.abas-login {
+  display: flex;
+  margin-bottom: 22px;
+  border-radius: var(--raio-borda-pequeno);
+  background-color: var(--azul-claro-fundo);
+  padding: 4px;
+}
+
+.aba-login {
+  flex: 1;
+  border: none;
+  background: none;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--azul-principal);
+  border-radius: var(--raio-borda-pequeno);
+}
+
+.aba-login--ativa {
+  background-color: var(--azul-principal);
+  color: var(--texto-claro);
+}
+
+.formulario-login h2 {
+  font-size: 17px;
+  color: var(--azul-escuro);
+  margin-bottom: 16px;
+}
+
+.rodape-login {
+  text-align: center;
+  margin-top: 18px;
+}
+
+.rodape-login p {
+  color: var(--azul-claro);
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+
+.botao-exemplo {
+  background-color: rgba(255, 255, 255, 0.12);
+  color: var(--texto-principal);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.botao-exemplo:hover {
+  background-color: rgba(255, 255, 255, 0.22);
+}
+
+.lista-credenciais {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.credencial-exemplo {
+  background-color: var(--azul-claro-fundo);
+  border-radius: var(--raio-borda-pequeno);
+  padding: 14px 16px;
+}
+
+.credencial-exemplo h4 {
+  font-size: 13.5px;
+  color: var(--azul-escuro);
+  margin-bottom: 6px;
+}
+
+.credencial-exemplo p {
+  font-size: 13px;
+  color: var(--texto-principal);
+  line-height: 1.5;
+}
+
+.credencial-exemplo strong {
+  color: var(--azul-principal);
+}
+
+@media (max-width: 480px) {
+  body.pagina-login {
+    padding: 18px 10px;
+  }
+
+  .cartao-login {
+    padding: 18px;
+  }
+
+  .marca-login .simbolo-marca {
+    font-size: 34px;
+  }
+
+  .marca-login h1 {
+    font-size: 21px;
+  }
+
+  .aba-login {
+    font-size: 12.5px;
+    padding: 8px 4px;
+  }
+}

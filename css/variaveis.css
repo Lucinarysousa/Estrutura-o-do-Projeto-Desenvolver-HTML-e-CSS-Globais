@@ -1,0 +1,63 @@
+:root {
+  --azul-escuro: #0B2E4F;
+  --azul-principal: #14548C;
+  --azul-medio: #3D8BD1;
+  --azul-claro: #8FC1EE;
+  --azul-claro-fundo: #EAF3FB;
+  --azul-fundo-pagina: #F4F9FD;
+  --branco: #FFFFFF;
+  --texto-principal: #1B2733;
+  --texto-secundario: #5A6B7B;
+  --texto-claro: #FFFFFF;
+  --borda: #D3E3F1;
+  --sucesso: #2E9E5B;
+  --sucesso-fundo: #E4F5EB;
+  --alerta: #C8862B;
+  --alerta-fundo: #FBF0DF;
+  --erro: #C0392B;
+  --erro-fundo: #FBE7E4;
+  --sombra-cartao: 0 4px 16px rgba(11, 46, 79, 0.10);
+  --sombra-modal: 0 12px 40px rgba(11, 46, 79, 0.25);
+  --raio-borda: 12px;
+  --raio-borda-pequeno: 8px;
+  --fonte-principal: 'Roboto', Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--fonte-principal);
+  background-color: var(--azul-fundo-pagina);
+  color: var(--texto-principal);
+}
+
+h1, h2, h3, h4, p, ul, ol, figure {
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+a {
+  color: var(--azul-principal);
+  text-decoration: none;
+}
+
+button {
+  font-family: var(--fonte-principal);
+  cursor: pointer;
+}
+
+input, select, textarea {
+  font-family: var(--fonte-principal);
+}
+
+.oculto {
+  display: none !important;
+}
