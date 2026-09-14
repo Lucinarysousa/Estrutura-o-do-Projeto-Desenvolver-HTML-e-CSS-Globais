@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bem Estar e Saúde — Painel do profissional</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/variaveis.css">
+<link rel="stylesheet" href="../css/estilo.css">
+<link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+  <header class="cabecalho">
+    <div class="cabecalho-marca"><span>🩺</span> Bem Estar e Saúde</div>
+    <div class="cabecalho-usuario">
+      <span class="cabecalho-nome" id="nomeProfissionalCabecalho"></span>
+      <div id="avatarCabecalho"></div>
+      <div class="cabecalho-navegacao">
+        <a href="perfil.html" class="botao botao--secundario botao--pequeno">Perfil</a>
+        <button type="button" id="botaoSair" class="botao botao--perigo botao--pequeno">Sair</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="conteudo-pagina">
+    <section class="secao">
+      <div class="secao-titulo"><h2>Agenda — Próximas medicações</h2></div>
+      <div class="lista-itens" id="listaAgendaMedicacoes"></div>
+    </section>
+
+    <section class="secao">
+      <div class="secao-titulo">
+        <h2>Meus pacientes</h2>
+        <button type="button" class="botao botao--primario" id="botaoNovoPaciente">+ Novo paciente</button>
+      </div>
+      <div class="grade-cartoes" id="gradePacientes"></div>
+    </section>
+  </main>
+
+  <div id="modalInfoPaciente" class="sobreposicao-modal oculto">
+    <div class="caixa-modal caixa-modal--larga">
+      <div class="cabecalho-modal">
+        <h2 id="nomeModalInfo"></h2>
+        <button type="button" class="botao-fechar-modal" id="fecharModalInfo">&times;</button>
+      </div>
+      <div id="corpoModalInfo"></div>
+      <div class="rodape-formulario">
+        <button type="button" class="botao botao--perigo" id="botaoExcluirPacienteModal">Excluir paciente</button>
+        <button type="button" class="botao botao--secundario" id="botaoEditarPacienteModal">Editar dados</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="modalFormularioPaciente" class="sobreposicao-modal oculto">
+    <div class="caixa-modal caixa-modal--larga">
+      <div class="cabecalho-modal">
+        <h2 id="tituloModalFormularioPaciente">Novo paciente</h2>
+        <button type="button" class="botao-fechar-modal" id="fecharModalFormularioPaciente">&times;</button>
+      </div>
+      <div class="abas">
+        <button type="button" class="aba aba--ativa" id="abaDadosPaciente" data-aba="dados">Dados do paciente</button>
+        <button type="button" class="aba" id="abaAnamnesePaciente" data-aba="anamnese">Anamnese</button>
+      </div>
+      <form id="formularioPaciente">
+        <input type="hidden" id="pacienteIdFormulario">
+        <div id="painelDadosPaciente">
+          <div class="rotulo-preview-foto grupo-formulario">
+            <div id="previaFotoPaciente" class="avatar-iniciais avatar-grande">?</div>
+            <div>
+              <button type="button" id="botaoEscolherFotoPaciente" class="botao botao--secundario botao--pequeno">Escolher foto</button>
+              <input type="file" id="entradaFotoPaciente" class="entrada-arquivo-oculta" accept="image/*">
+            </div>
+          </div>
+          <div class="linha-formulario">
+            <div class="grupo-formulario">
+              <label for="pacienteNome">Nome completo</label>
+              <input class="campo-texto" type="text" id="pacienteNome" required>
+            </div>
+            <div class="grupo-formulario">
+              <label for="pacienteCpf">CPF</label>
+              <input class="campo-texto" type="text" id="pacienteCpf" maxlength="14" required>
+              <span class="texto-erro-campo" id="erroPacienteCpf"></span>
+            </div>
+          </div>
+          <div class="linha-formulario">
+            <div class="grupo-formulario">
+              <label for="pacienteEmail">Email</label>
+              <input class="campo-texto" type="email" id="pacienteEmail" required>
+              <span class="texto-erro-campo" id="erroPacienteEmail"></span>
+            </div>
+            <div class="grupo-formulario">
+              <label for="pacienteNascimento">Data de nascimento</label>
+              <input class="campo-texto" type="date" id="pacienteNascimento" required>
+            </div>
+          </div>
+          <div class="linha-formulario">
+            <div class="grupo-formulario">
+              <label for="pacienteSenha">Senha <span id="rotuloSenhaOpcional" class="texto-ajuda oculto">(deixe em branco para manter a atual)</span></label>
+              <input class="campo-texto" type="password" id="pacienteSenha" minlength="6">
+            </div>
+            <div class="grupo-formulario">
+              <label for="pacienteRepetirSenha">Repetir senha</label>
+              <input class="campo-texto" type="password" id="pacienteRepetirSenha" minlength="6">
+              <span class="texto-erro-campo" id="erroPacienteSenha"></span>
+            </div>
+          </div>
+        </div>
+        <div id="painelAnamnesePaciente" class="oculto">
+          <div class="linha-formulario">
+            <div class="grupo-formulario">
+              <label for="anamneseTemperatura">T (Temperatura)</label>
+              <input class="campo-texto" type="text" id="anamneseTemperatura" placeholder="Ex: 36.5 °C">
+            </div>
+            <div class="grupo-formulario">
+              <label for="anamnesePulso">P (Pulso)</label>
+              <input class="campo-texto" type="text" id="anamnesePulso" placeholder="Ex: 78 bpm">
+            </div>
+            <div class="grupo-formulario">
+              <label for="anamneseRespiratoria">R (Frequência Respiratória)</label>
+              <input class="campo-texto" type="text" id="anamneseRespiratoria" placeholder="Ex: 18 irpm">
+            </div>
+          </div>
+          <div class="linha-formulario">
+            <div class="grupo-formulario">
+              <label for="anamnesePressao">PA (Pressão Arterial)</label>
+              <input class="campo-texto" type="text" id="anamnesePressao" placeholder="Ex: 120/80 mmHg">
+            </div>
+            <div class="grupo-formulario">
+              <label for="anamneseSaturacao">SpO2 (Saturação)</label>
+              <input class="campo-texto" type="text" id="anamneseSaturacao" placeholder="Ex: 97%">
+            </div>
+            <div class="grupo-formulario">
+              <label for="anamneseGlicemia">Glicemia</label>
+              <input class="campo-texto" type="text" id="anamneseGlicemia" placeholder="Ex: 95 mg/dL">
+            </div>
+          </div>
+          <div class="grupo-formulario">
+            <label for="anamneseAlergia">Alergia medicamentosa</label>
+            <textarea class="campo-area" id="anamneseAlergia"></textarea>
+          </div>
+          <div class="grupo-formulario">
+            <label for="anamneseHistorico">Histórico familiar</label>
+            <textarea class="campo-area" id="anamneseHistorico"></textarea>
+          </div>
+        </div>
+        <div class="rodape-formulario">
+          <button type="button" class="botao botao--secundario" id="botaoCancelarFormularioPaciente">Cancelar</button>
+          <button type="submit" class="botao botao--primario">Salvar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+<script src="../js/utilitarios.js"></script>
+<script src="../js/armazenamento.js"></script>
+<script src="../js/autenticacao.js"></script>
+<script src="../js/alarmes.js"></script>
+<script src="pacientes.js"></script>
+<script src="dashboard.js"></script>
+</body>
+</html>
