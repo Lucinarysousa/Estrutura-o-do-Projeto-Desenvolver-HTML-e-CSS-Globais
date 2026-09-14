@@ -1,0 +1,62 @@
+.cabecalho-pagina-paciente {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 26px;
+  flex-wrap: wrap;
+}
+
+.cabecalho-pagina-paciente h1 {
+  font-size: 21px;
+  color: var(--azul-escuro);
+}
+
+.cabecalho-pagina-paciente p {
+  font-size: 13px;
+  color: var(--texto-secundario);
+}
+
+.cartao-vacina {
+  margin-bottom: 16px;
+}
+
+.cabecalho-vacina {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 6px;
+}
+
+.cabecalho-vacina h3 {
+  font-size: 15px;
+  color: var(--texto-principal);
+}
+
+.cabecalho-vacina p {
+  font-size: 12.5px;
+  color: var(--texto-secundario);
+  margin-top: 3px;
+}
+
+.acoes-vacina {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.lista-reforcos {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px dashed var(--borda);
+}
+
+.titulo-reforcos {
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--azul-principal);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
